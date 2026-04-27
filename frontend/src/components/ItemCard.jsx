@@ -12,7 +12,10 @@ function ItemCard({ item, onDelete }) {
       <p><strong>Category:</strong> {item.category}</p>
       <p><strong>Price:</strong> ${item.price}</p>
       <p>{item.description}</p>
-      <p><strong>Expiry Date</strong> ${Date.expirydate}</p>
+      <p>
+        <strong>Expiry Date:</strong>{" "}
+        {item.expiryDate ? new Date(item.expiryDate).toLocaleDateString() : "N/A"}
+      </p>
 
       <div className="card-actions">
         <Link className="btn secondary" to={`/edit-item/${item._id}`}>Edit</Link>

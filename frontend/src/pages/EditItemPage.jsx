@@ -12,6 +12,14 @@ function EditItemPage() {
     const fetchItem = async () => {
       try {
         const { data } = await getItemById(id);
+
+        // Format expiryDate so <input type="date"> can display it
+        if (data.expiryDate) {
+          data.expiryDate = new Date(data.expiryDate)
+            .toISOString()
+            .split("T")[0];
+        }
+
         setItem(data);
       } catch (error) {
         console.error("Failed to fetch item", error);

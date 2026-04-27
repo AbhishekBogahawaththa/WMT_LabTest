@@ -8,7 +8,7 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
       price: "",
       description: "",
       imageUrl: "",
-      expirydate: "",
+      expiryDate: "",
     }
   );
 
@@ -56,8 +56,8 @@ function ItemForm({ initialValues, onSubmit, submitText }) {
       <label>Expiry Date</label>
       <input
         type="date"
-        name="expirydate"
-        value={formData.expirydate}
+        name="expiryDate"
+        value={formData.expiryDate}
         onChange={handleChange}
         required
       />
